@@ -431,6 +431,14 @@ body {
 }
 
 @media (max-width: 768px) {
+    .section-block { padding: 65px 6%; }
+    .porto-title { font-size: 54px; }
+    .slide2-container { flex-direction: column; align-items: center; text-align: center; }
+    .project-grid-container { grid-template-columns: 1fr; }
+    .social-grid-custom { grid-template-columns: 1fr; }
+    .footer-bottom-bar { flex-direction: column; gap: 8px; text-align: center; }
+
+    /* Perbaikan Navbar & Hamburger Mobile */
     .navbar-pill {
         width: 90% !important;
         padding: 12px 20px !important;
@@ -442,17 +450,19 @@ body {
         display: flex !important;
     }
 
-    /* Dropdown menu muncul di bawah navbar utama tanpa tumpang tindih */
+    /* Kotak dropdown menu mobile */
     .nav-menu {
         position: absolute !important;
         top: 65px !important;
         left: 0 !important;
         right: 0 !important;
+        width: 100% !important;
         background: #3b110e !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 15px !important;
-        padding: 22px 20px !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        padding: 20px 15px !important;
         border-radius: 20px !important;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
         border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -464,12 +474,17 @@ body {
         display: flex !important;
     }
 
+    /* Memastikan setiap link menu berdiri sendiri di barisnya (tidak tumpang tindih) */
     .nav-menu a {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
         font-size: 16px !important;
         font-weight: 700 !important;
         color: #ffffff !important;
         text-decoration: none !important;
-        padding: 5px 0 !important;
+        padding: 8px 0 !important;
+        line-height: 1.4 !important;
     }
 
     .nav-menu a:hover {
