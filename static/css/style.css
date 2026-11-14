@@ -439,33 +439,43 @@ body {
     }
 
     .hamburger-btn {
-        display: flex !important; /* Paksa tombol hamburger muncul di HP */
+        display: flex !important;
     }
 
+    /* Kotak dropdown menu mobile */
     .nav-menu {
         position: absolute !important;
-        top: 65px !important;
+        top: 75px !important; /* Diberi jarak ke bawah biar tidak menempel/menutupi tombol utama */
         left: 0 !important;
         right: 0 !important;
         background: #3b110e !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 15px !important;
-        padding: 22px 0 !important;
+        gap: 16px !important;
+        padding: 24px 20px !important;
         border-radius: 20px !important;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
-        display: none !important; /* Sembunyikan default sebelum diklik */
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        display: none !important;
+        z-index: 999 !important;
     }
 
+    /* Saat menu aktif (diklik) */
     .nav-menu.active {
-        display: flex !important; /* Munculkan saat diklik */
+        display: flex !important; 
     }
 
+    /* Styling teks menu biar rapi dan tidak tumpang tindih */
     .nav-menu a {
-        font-size: 15px !important;
+        font-size: 16px !important;
         font-weight: 700 !important;
-        color: #ffffff !important; /* Teks putih bersih */
+        color: #ffffff !important;
         text-decoration: none !important;
+        padding: 6px 0 !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .nav-menu a:hover {
+        color: #f4d03f !important;
     }
 }
