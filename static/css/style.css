@@ -35,6 +35,7 @@ body {
 }
 
 .navbar-pill {
+    position: relative;
     width: 500px;
     max-width: 90%;
     background: rgba(255, 255, 255, 0.9);
@@ -43,9 +44,6 @@ body {
     padding: 10px 25px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     margin: 10px auto 0 auto;
-}
-
-.nav-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,6 +59,7 @@ body {
     justify-content: center;
     color: #3b110e;
     transition: 0.2s;
+    text-decoration: none;
 }
 
 .nav-icon-admin:hover {
@@ -83,6 +82,26 @@ body {
 
 .nav-menu a:hover {
     color: #d35400;
+}
+
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: #3b110e;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 .hero-text-container {
@@ -349,19 +368,7 @@ body {
     color: #f4d03f;
 }
 
-/* Responsif Mobile */
-@media (max-width: 768px) {
-    .section-block { padding: 65px 6%; }
-    .porto-title { font-size: 54px; }
-    .slide2-container { flex-direction: column; align-items: center; text-align: center; }
-    .project-grid-container { grid-template-columns: 1fr; }
-    .social-grid-custom { grid-template-columns: 1fr; }
-    .footer-bottom-bar { flex-direction: column; gap: 8px; text-align: center; }
-}
-
-/* =========================================================
-   ANIMASI HALUS (FADE IN & SLIDE UP)
-   ========================================================= */
+/* ANIMASI HALUS (FADE IN & SLIDE UP) */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -373,7 +380,6 @@ body {
     }
 }
 
-/* Terapkan animasi ke elemen-elemen penting */
 .hero-text-container {
     animation: fadeInUp 1s ease-out forwards;
 }
@@ -391,7 +397,6 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efek interaktif hover card proyek agar makin ciamik */
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
@@ -405,80 +410,7 @@ body {
     transform: translateY(-3px);
 }
 
-
-/* =========================================================
-   CLEAN NAVBAR & MOBILE HAMBURGER SYSTEM
-   ========================================================= */
-.navbar-pill {
-    position: relative;
-    width: 500px;
-    max-width: 90%;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    border-radius: 50px;
-    padding: 10px 25px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    margin: 10px auto 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-icon-admin {
-    width: 36px;
-    height: 36px;
-    border: 2px solid #3b110e;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #3b110e;
-    transition: 0.2s;
-    text-decoration: none;
-}
-
-.nav-icon-admin:hover {
-    background-color: #3b110e;
-    color: #fff;
-}
-
-.nav-menu {
-    display: flex;
-    gap: 25px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #3b110e;
-    font-weight: 600;
-    font-size: 14px;
-    transition: color 0.2s;
-}
-
-.nav-menu a:hover {
-    color: #d35400;
-}
-
-.hamburger-btn {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 26px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.hamburger-btn span {
-    width: 100%;
-    height: 3px;
-    background-color: #3b110e;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
+/* RESPONSIF MOBILE & HAMBURGER MENU */
 @media (max-width: 768px) {
     .section-block { padding: 65px 6%; }
     .porto-title { font-size: 54px; }
@@ -487,55 +419,55 @@ body {
     .social-grid-custom { grid-template-columns: 1fr; }
     .footer-bottom-bar { flex-direction: column; gap: 8px; text-align: center; }
 
-    /* Navbar Pill utama di HP */
     .navbar-pill {
         width: 92% !important;
-        max-width: 380px !important;
-        padding: 12px 20px !important;
+        max-width: 400px !important;
+        padding: 12px 22px !important;
         border-radius: 30px !important;
         position: relative !important;
+        z-index: 100 !important;
     }
 
     .hamburger-btn {
         display: flex !important;
     }
 
-    /* DROPDOWN MENU MOBILE - KITA BUAT LEBARNYA PAS & TIDAK TERJEPIT */
     .nav-menu {
         position: absolute !important;
-        top: 68px !important;
+        top: 70px !important;
         left: 50% !important;
-        transform: translateX(-50%) !important; /* Posisi di tengah persis di bawah navbar */
-        width: 90vw !important; /* Mengikuti lebar layar HP agar tidak sempit */
-        max-width: 340px !important;
+        transform: translateX(-50%) !important;
+        width: 92vw !important;
+        max-width: 360px !important;
         background: #3b110e !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 14px !important;
-        padding: 24px 20px !important;
-        border-radius: 20px !important;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7) !important;
-        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        gap: 16px !important;
+        padding: 26px 20px !important;
+        border-radius: 22px !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important;
+        border: 2px solid rgba(255, 255, 255, 0.25) !important;
         display: none !important;
-        z-index: 9999 !important;
+        z-index: 99999 !important;
     }
 
     .nav-menu.active {
         display: flex !important;
     }
 
-    /* Teks menu dijamin leluasa, tidak bakal terpotong/tumpang tindih */
     .nav-menu a {
         display: block !important;
         width: 100% !important;
         text-align: center !important;
         font-size: 16px !important;
-        font-weight: 700 !important;
+        font-weight: 800 !important;
         color: #ffffff !important;
         text-decoration: none !important;
-        padding: 8px 0 !important;
+        padding: 10px 0 !important;
         letter-spacing: 0.5px !important;
+        position: relative !important;
+        z-index: 100000 !important;
     }
 
     .nav-menu a:hover {
