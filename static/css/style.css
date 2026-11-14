@@ -358,3 +358,49 @@ body {
     .social-grid-custom { grid-template-columns: 1fr; }
     .footer-bottom-bar { flex-direction: column; gap: 8px; text-align: center; }
 }
+
+/* =========================================================
+   ANIMASI HALUS (FADE IN & SLIDE UP)
+   ========================================================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Terapkan animasi ke elemen-elemen penting */
+.hero-text-container {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.navbar-pill {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.slide2-container > div {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.project-card {
+    animation: fadeInUp 1.2s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek interaktif hover card proyek agar makin ciamik */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.social-btn {
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+}
