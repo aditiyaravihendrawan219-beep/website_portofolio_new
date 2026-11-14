@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang & Pengalaman - Aditiya Ravi Hendrawan</title>
-    <!-- Google Font Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- CSS Khusus Halaman About -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 </head>
 <body>
@@ -15,176 +12,24 @@
     <div class="about-container">
         <h1 class="about-title">TENTANG SAYA & PENGALAMAN</h1>
         
-        <!-- Paragraf Pembuka (Bisa diedit dari Dashboard Admin) -->
-        <p class="about-desc" style="white-space: pre-line;">{{ konten.about_intro or 'Halo! Saya Aditiya Ravi Hendrawan, mahasiswa semester 3 Teknik Informatika di Universitas Nahdlatul Ulama Yogyakarta, sekaligus seorang freelancer di bidang Desain Grafis, UI/UX, dan Web Development. Ketertarikan saya pada dunia visual sudah tumbuh sejak bangku SMA, yang kemudian berkembang menjadi karier profesional.' }}</p>
+        <p class="about-desc" style="white-space: pre-line;">Halo! Saya Aditiya Ravi Hendrawan, mahasiswa semester 3 Teknik Informatika di Universitas Nahdlatul Ulama Yogyakarta, sekaligus seorang freelancer di bidang Desain Grafis, UI/UX, dan Web Development. Ketertarikan saya pada dunia visual sudah tumbuh sejak bangku SMA, yang kemudian berkembang menjadi karier profesional.</p>
 
-        <!-- Pengalaman SMA -->
         <div class="exp-category-title">SMA NEGERI 1 SENTOLO 2020 - 2023</div>
-        <p class="about-desc" style="white-space: pre-line;">{{ konten.pengalaman_sma or '• Koordinator Bidang Pengawasan - MPK Adisatya Kamandaka (2021-2022)\n• Anggota Syiar dan Dakwah - Rohis SMAN 1 Sentolo (2021-2022)\n• Dewan Ambalan - SMAN 1 Sentolo (2021-2022)\n• Koordinator Multimedia - Forkom OSIS Kulon Progo (2020-2022)' }}</p>
+        <p class="about-desc" style="white-space: pre-line;">• Koordinator Bidang Pengawasan - MPK Adisatya Kamandaka (2021-2022)
+• Anggota Syiar dan Dakwah - Rohis SMAN 1 Sentolo (2021-2022)
+• Dewan Ambalan - SMAN 1 Sentolo (2021-2022)
+• Koordinator Multimedia - Forkom OSIS Kulon Progo (2020-2022)</p>
 
-        <!-- Pengalaman Kerja -->
         <div class="exp-category-title">OPERATOR DESAIN VOOKUS DIGITAL PRINTING (NOVEMBER 2023 - JANUARI 2025)</div>
-        <p class="about-desc" style="white-space: pre-line;">{{ konten.pengalaman_kerja or '• Operator Desain - Vookus Digital Printing (Nov 2023 - Jan 2025): Bekerja selama 15 bulan membuat desain dan merekomendasikan bahan cetak kepada 10+ pelanggan setiap harinya.' }}</p>
+        <p class="about-desc" style="white-space: pre-line;">• Operator Desain - Vookus Digital Printing (Nov 2023 - Jan 2025): Bekerja selama 15 bulan membuat desain dan merekomendasikan bahan cetak kepada 10+ pelanggan setiap harinya.</p>
 
-        <!-- Pendidikan Kuliah -->
         <div class="exp-category-title">INFORMATIKA UNIVERSITAS NAHDLATUL ULAMA YOGYAKARTA (NOVEMBER 2025 - SEKARANG)</div>
-        <p class="about-desc" style="white-space: pre-line;">{{ konten.pengalaman_kuliah or '• Mahasiswa Informatika - Universitas Nahdlatul Ulama Yogyakarta (Nov 2025 - Sekarang): Aktif menempuh studi sarjana semester 3.' }}</p>
+        <p class="about-desc" style="white-space: pre-line;">• Mahasiswa Informatika - Universitas Nahdlatul Ulama Yogyakarta (Nov 2025 - Sekarang): Aktif menempuh studi sarjana semester 3.</p>
 
-        <!-- Tombol Kembali ke Beranda -->
         <div>
             <a href="{{ url_for('index') }}" class="btn-back">← KEMBALI KE BERANDA</a>
         </div>
     </div>
 
-=======
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='icon/favicone.ico') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_about.css') }}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <title>Tentang Saya - Portofolio Ravi</title>
-</head>
-<body>
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="container">
-            <div class="navbar-box">
-                <ul class="menu">
-                    <li><a href="{{ url_for('home') }}">Beranda</a></li>
-                    <li><a href="{{ url_for('about') }}" class="active-menu">Tentang</a></li>
-                    <li><a href="{{ url_for('home') }}#proyek">Proyek</a></li>
-                    <li><a href="{{ url_for('home') }}#kontak">Kontak</a></li>
-                    <li>
-                        <button id="theme-toggle" class="theme-btn">
-                            <i class="fa-solid fa-moon"></i>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Navbar -->
-
-    
-
-    <!-- Bagian Halaman Tentang (Dua Kolom Grid) -->
-    <div class="about-page">
-        <div class="container about-grid-container">
-            
-            <!-- ================= KOLOM KIRI ================= -->
-            <div class="about-left-column" data-aos="fade-right" data-aos-duration="800">
-                <!-- Foto Profil -->
-                <div class="about-img-box">
-                    <img src="{{ url_for('static', filename='assets/tentang.png') }}" alt="Foto Ravi" />
-                </div>
-                
-                <!-- Teks Perkenalan -->
-                <div class="about-intro">
-                    <h1>Tentang Saya</h1>
-                    <div class="timeline-content">
-                        <h3>Halo, Saya Aditiya Ravi Hendrawan</h3>
-                        <p>
-                            Ketertarikan saya pada dunia desain grafis sudah tumbuh sejak saya duduk di bangku SMA. Seiring berjalannya waktu, passion ini terus berkembang menjadi jalur karier yang saya tekuni dengan serius dan profesional. Saat ini, saya juga sedang menempuh pendidikan sebagai mahasiswa Informatika semester tiga untuk memperluas wawasan mendalam di bidang teknologi dan pengembangan web.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ================= KOLOM KANAN ================= -->
-            <div class="about-right-column" data-aos="fade-left" data-aos-duration="1000">
-                <h2>Perjalanan & Pengalaman</h2>
-                
-                <div class="timeline-container">
-                    <!-- Timeline 1 -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">2025 september — Sekarang</div>
-                        <div class="timeline-content">
-                            <h3>Mahasiswa Informatika</h3>
-                            <p>Aktif berkuliah di universitas mendalami ilmu komputer, manajemen basis data, struktur data, serta pemrograman web menggunakan Python Flask, HTML, CSS, dan JavaScript.</p>
-                        </div>
-                    </div>
-
-                    <!-- Timeline 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">Pengalaman Profesional 2023 November - 2025 januari 2025</div>
-                        <div class="timeline-content">
-                            <h3>15 Bulan di Perusahaan Percetakan Vookus Digital Printing </h3>
-                            <p>Bekerja secara langsung di industri percetakan untuk mengasah keterampilan praktis, mulai dari eksekusi visual menggunakan CorelDRAW & Adobe Illustrator hingga memastikan kualitas hasil cetak (print production) sesuai standar klien.</p>
-                        </div>
-                    </div>
-
-                    <!-- Timeline 3 -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">Masa Sekolah (SMA) 2020 - 2023 </div>
-                        <div class="timeline-content">
-                            <h3>Awal Ketertarikan Desain Grafis</h3>
-                            <p>Mulai mengeksplorasi dunia desain visual secara otodidak, menciptakan berbagai konsep identitas merek, logo, dan karya grafis untuk berbagai proyek kreatif.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Waves -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#00cba9"
-          fill-opacity="1"
-          d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,138.7C672,149,768,203,864,229.3C960,256,1056,256,1152,245.3C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-    </svg>
-    <!-- Waves -->
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; Copyright 2025 by <span>Aditiya Ravi Hendrawan.</span></p>
-        <div class="social">
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-    </footer>
-    <!-- Footer -->
-
-    
-
-    <!-- Script Dark Mode & AOS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 400,
-            once: true,
-            offset: 50,
-            delay: 0
-        });
-
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        }
-
-        themeToggleBtn.addEventListener('click', function () {
-            document.body.classList.toggle('dark-mode');
-            let theme = 'light';
-            if (document.body.classList.contains('dark-mode')) {
-                theme = 'dark';
-                themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-            } else {
-                themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-            }
-            localStorage.setItem('theme', theme);
-        });
-    </script>
->>>>>>> 66e10fc494c03c7860204a442affce38ed224bc4
 </body>
 </html>

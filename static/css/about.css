@@ -14,9 +14,9 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
-    justify-content: flex-start; /* Menggeser kotak dari tengah ke sebelah kiri */
+    justify-content: flex-start;
     align-items: center;
-    padding: 40px 60px; /* Atur jarak dari tepi kiri layar (bisa ditambah jadi 80px atau 100px sesuai selera) */
+    padding: 40px 60px;
 }
 
 .about-container {
@@ -53,18 +53,6 @@ body {
     margin: 25px 0 12px 0;
 }
 
-.exp-list {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.exp-list li {
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 12px;
-    color: #e0e0e0;
-}
-
 .btn-back {
     display: inline-block;
     background: #d35400;
@@ -83,38 +71,8 @@ body {
     transform: translateY(-2px);
 }
 
-/* =========================================================
-   RESPONSIVE MOBILE - HALAMAN ABOUT
-   ========================================================= */
 @media (max-width: 768px) {
-    body {
-        padding: 25px 15px;
-        align-items: flex-start;
-    }
-
-    .about-container {
-        padding: 28px 20px;
-        border-radius: 18px;
-    }
-
-    .about-title {
-        font-size: 21px;
-        margin-bottom: 18px;
-    }
-
-    .about-desc {
-        font-size: 13px;
-        line-height: 1.7;
-    }
-
-    .exp-category-title {
-        font-size: 13px;
-    }
-
-    .btn-back {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 12px;
-    }
+    body { padding: 25px 15px; align-items: flex-start; }
+    .about-container { padding: 28px 20px; }
+    .btn-back { display: block; width: 100%; text-align: center; }
 }

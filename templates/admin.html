@@ -88,15 +88,15 @@
                                 </td>
                                 <td class="td-actions">
                                     <button type="button" class="btn-edit" 
-                                        data-id="{{ p.id }}"
-                                        data-judul="{{ p.judul }}"
-                                        data-deskripsi="{{ p.deskripsi }}"
-                                        data-link="{{ p.link_drive or '' }}"
-                                        data-gambar="{{ p.gambar or '' }}"
-                                        onclick="bukaModalEdit(this)">
-                                        Edit
+                                    data-id="{{ p.id }}"
+                                    data-judul="{{ p.judul }}"
+                                    data-deskripsi="{{ p.deskripsi }}"
+                                    data-link="{{ p.link_drive or '' }}"
+                                    data-gambar="{{ p.gambar or '' }}"
+                                    onclick="bukaModalEdit(this)">
+                                    Edit
                                     </button>
-                                    <a href="{{ url_for('hapus_proyek', id=p.id) }}" class="btn-delete" onclick="return confirm('Yakin ingin menghapus proyek ini?')">Hapus</a>
+                                    <a href="{{ url_for('hapus_proyek', id=p.id) }}" class="btn-delete" onclick="return confirm('Yakin ingin menghapus proyek {{ p.judul }}?')">Hapus</a>
                                 </td>
                             </tr>
                             {% endfor %}
@@ -109,11 +109,13 @@
             </div>
         </div>
 
-        <!-- ==================== TAB 2: EDIT FOTO & PROFIL SINGKAT ==================== -->
-        <div id="tab-profil" class="tab-content" style="display: none;">
-            <div class="admin-card">
-                <h3>EDIT FOTO & PROFIL SINGKAT (BERANDA)</h3>
-                <form action="{{ url_for('update_konten') }}" method="POST" enctype="multipart/form-data">
+        <!-- ==================== FORM GABUNGAN TAB 2 & TAB 3 ==================== -->
+        <form action="{{ url_for('update_konten') }}" method="POST" enctype="multipart/form-data">
+            
+            <!-- TAB 2: EDIT FOTO & PROFIL SINGKAT (HALAMAN AWAL) -->
+            <div id="tab-profil" class="tab-content" style="display: none;">
+                <div class="admin-card">
+                    <h3>EDIT FOTO & PROFIL SINGKAT (BERANDA)</h3>
                     <div style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 20px;">
                         <div>
                             <label class="input-label">Preview Foto Saat Ini</label>
@@ -132,89 +134,39 @@
                         </div>
                     </div>
                     <button type="submit" class="btn-submit">SIMPAN PERUBAHAN PROFIL</button>
-                </form>
+                </div>
             </div>
-        </div>
 
-        <!-- ==================== TAB 3: HALAMAN ABOUT & PENGALAMAN ==================== -->
-        <div id="tab-about" class="tab-content" style="display: none;">
-            
-            <!-- Card A: Edit Paragraf Pembuka About -->
-            <div class="admin-card">
-                <h3>EDIT PARAGRAF PEMBUKA (/about)</h3>
-                <form action="{{ url_for('update_konten') }}" method="POST">
-                    <div class="form-group-last">
+            <!-- TAB 3: EDIT HALAMAN ABOUT & PENGALAMAN -->
+            <div id="tab-about" class="tab-content" style="display: none;">
+                <div class="admin-card">
+                    <h3>EDIT HALAMAN TENTANG SAYA & PENGALAMAN (/about)</h3>
+                    
+                    <div class="form-group">
                         <label class="input-label">Paragraf Pembuka (Tentang Saya)</label>
                         <textarea name="about_intro" rows="4" class="admin-textarea">{{ konten.about_intro or '' }}</textarea>
                     </div>
-                    <button type="submit" class="btn-submit">SIMPAN PARAGRAF PEMBUKA</button>
-                </form>
-            </div>
 
-            <!-- Card B: Form Tambah Pengalaman Baru -->
-            <div class="admin-card">
-                <h3>+ TAMBAH RIWAYAT PENGALAMAN BARU</h3>
-                <form action="{{ url_for('tambah_pengalaman') }}" method="POST">
-                    <div class="form-grid">
-                        <div>
-                            <label class="input-label">Judul / Kategori Pengalaman & Tahun</label>
-                            <input type="text" name="kategori" placeholder="Contoh: FREELANCE WEB DEVELOPER (2025 - SEKARANG)" required class="admin-input">
-                        </div>
-                        <div>
-                            <label class="input-label">Nomor Urut Tampil</label>
-                            <input type="number" name="urutan" value="{{ (pengalaman|length) + 1 }}" min="1" class="admin-input">
-                        </div>
+                    <div class="form-group">
+                        <label class="input-label">Riwayat Pengalaman SMA</label>
+                        <textarea name="pengalaman_sma" rows="5" class="admin-textarea">{{ konten.pengalaman_sma or '' }}</textarea>
                     </div>
+
+                    <div class="form-group">
+                        <label class="input-label">Pengalaman Kerja (Percetakan / Profesional)</label>
+                        <textarea name="pengalaman_kerja" rows="3" class="admin-textarea">{{ konten.pengalaman_kerja or '' }}</textarea>
+                    </div>
+
                     <div class="form-group-last">
-                        <label class="input-label">Detail Pengalaman (Gunakan Enter untuk poin baru)</label>
-                        <textarea name="isi" rows="4" placeholder="• Membangun website portofolio dan aplikasi web..." required class="admin-textarea"></textarea>
+                        <label class="input-label">Pendidikan Kuliah (UNU Yogyakarta)</label>
+                        <textarea name="pengalaman_kuliah" rows="3" class="admin-textarea">{{ konten.pengalaman_kuliah or '' }}</textarea>
                     </div>
-                    <button type="submit" class="btn-submit">TAMBAH PENGALAMAN</button>
-                </form>
-            </div>
 
-            <!-- Card C: Daftar Pengalaman Aktif (Edit & Hapus) -->
-            <div class="admin-card">
-                <h3>DAFTAR PENGALAMAN AKTIF ({{ pengalaman|length }})</h3>
-                {% if pengalaman %}
-                <div class="table-responsive">
-                    <table class="admin-table">
-                        <thead>
-                            <tr>
-                                <th>Urutan</th>
-                                <th>Kategori & Tahun</th>
-                                <th>Detail Isi</th>
-                                <th class="text-center">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for exp in pengalaman %}
-                            <tr>
-                                <td><span class="badge-img">#{{ exp.urutan }}</span></td>
-                                <td class="td-title">{{ exp.kategori }}</td>
-                                <td class="td-desc" style="white-space: pre-line;">{{ exp.isi }}</td>
-                                <td class="td-actions">
-                                    <button type="button" class="btn-edit"
-                                        data-id="{{ exp.id }}"
-                                        data-kategori="{{ exp.kategori }}"
-                                        data-isi="{{ exp.isi }}"
-                                        data-urutan="{{ exp.urutan }}"
-                                        onclick="bukaModalExp(this)">
-                                        Edit
-                                    </button>
-                                    <a href="{{ url_for('hapus_pengalaman', id=exp.id) }}" class="btn-delete" onclick="return confirm('Hapus pengalaman ini?')">Hapus</a>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <button type="submit" class="btn-submit">SIMPAN SEMUA HALAMAN ABOUT</button>
                 </div>
-                {% else %}
-                <p class="empty-state">Belum ada data pengalaman.</p>
-                {% endif %}
             </div>
 
-        </div>
+        </form>
     </div>
 
     <!-- MODAL POP-UP EDIT PROYEK -->
@@ -251,35 +203,6 @@
         </div>
     </div>
 
-    <!-- MODAL POP-UP EDIT PENGALAMAN -->
-    <div id="modalExp" class="modal-overlay" style="display: none;">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3>EDIT PENGALAMAN</h3>
-                <button type="button" onclick="tutupModalExp()" class="btn-close-modal">&times;</button>
-            </div>
-            
-            <form id="formEditExp" method="POST">
-                <div class="form-group">
-                    <label class="input-label">Judul / Kategori Pengalaman</label>
-                    <input type="text" id="edit_exp_kategori" name="kategori" required class="admin-input">
-                </div>
-                <div class="form-group">
-                    <label class="input-label">Nomor Urut</label>
-                    <input type="number" id="edit_exp_urutan" name="urutan" required class="admin-input">
-                </div>
-                <div class="form-group-last">
-                    <label class="input-label">Detail Isi</label>
-                    <textarea id="edit_exp_isi" name="isi" rows="5" required class="admin-textarea"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" onclick="tutupModalExp()" class="btn-cancel">Batal</button>
-                    <button type="submit" class="btn-submit">Simpan Perubahan</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <!-- JAVASCRIPT KONTROL TAB, PREVIEW FOTO & MODAL -->
     <script>
         function bukaTab(tabId, btnElement) {
@@ -294,38 +217,24 @@
             reader.onload = function(){
                 document.getElementById('previewFoto').src = reader.result;
             };
-            if (event.target.files[0]) {
-                reader.readAsDataURL(event.target.files[0]);
-            }
+            reader.readAsDataURL(event.target.files[0]);
         }
 
         function bukaModalEdit(btn) {
-            document.getElementById('formEdit').action = '/admin/edit/' + btn.getAttribute('data-id');
-            document.getElementById('edit_judul').value = btn.getAttribute('data-judul');
-            document.getElementById('edit_deskripsi').value = btn.getAttribute('data-deskripsi');
-            const linkDrive = btn.getAttribute('data-link');
-            const gambar = btn.getAttribute('data-gambar');
-            document.getElementById('edit_link').value = (linkDrive && linkDrive !== 'None') ? linkDrive : '';
-            document.getElementById('edit_gambar').value = (gambar && gambar !== 'None') ? gambar : '';
-            document.getElementById('modalEdit').style.display = 'flex';
-        }
+        const id = btn.getAttribute('data-id');
+        const judul = btn.getAttribute('data-judul');
+        const deskripsi = btn.getAttribute('data-deskripsi');
+        const linkDrive = btn.getAttribute('data-link');
+        const gambar = btn.getAttribute('data-gambar');
 
-        function tutupModalEdit() {
-            document.getElementById('modalEdit').style.display = 'none';
-        }
-
-        function bukaModalExp(btn) {
-            document.getElementById('formEditExp').action = '/admin/pengalaman/edit/' + btn.getAttribute('data-id');
-            document.getElementById('edit_exp_kategori').value = btn.getAttribute('data-kategori');
-            document.getElementById('edit_exp_isi').value = btn.getAttribute('data-isi');
-            document.getElementById('edit_exp_urutan').value = btn.getAttribute('data-urutan');
-            document.getElementById('modalExp').style.display = 'flex';
-        }
-
-        function tutupModalExp() {
-            document.getElementById('modalExp').style.display = 'none';
-        }
+        document.getElementById('formEdit').action = '/admin/edit/' + id;
+        document.getElementById('edit_judul').value = judul;
+        document.getElementById('edit_deskripsi').value = deskripsi;
+        document.getElementById('edit_link').value = (linkDrive && linkDrive !== 'None') ? linkDrive : '';
+        document.getElementById('edit_gambar').value = (gambar && gambar !== 'None') ? gambar : '';
+        document.getElementById('modalEdit').style.display = 'flex';
+    }
     </script>
 
 </body>
-</html>4
+</html>

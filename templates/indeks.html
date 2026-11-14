@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -47,6 +46,7 @@
                     {{ konten.profil_singkat or 'Hai, Nama saya Aditiya Ravi Hendrawan. Ketertarikan saya pada dunia desain grafis sudah tumbuh sejak bangku SMA, yang kini berkembang menjadi karier profesional dan studi saya di Universitas Nahdlatul Ulama Yogyakarta, jurusan Informatika. Pengalaman kerja nyata selama 15 bulan di industri percetakan menempa keterampilan saya dalam eksekusi visual dan produksi media cetak.' }}
                 </p>
                 
+                <!-- Tombol About Me -->
                 <a href="{{ url_for('about') }}" class="about-me-btn">About Me</a>
 
                 <h3 class="skill-heading">SKILL & TOOLS</h3>
@@ -92,55 +92,34 @@
                 <img src="{{ url_for('static', filename='assets/proyek/proyek 1.webp') }}" alt="Proyek 1">
                 <h3>LOGO & BRANDING</h3>
                 <p>Datong - Identitas Visual & Branding Komersial.</p>
-                <a href="https://drive.google.com/file/d/1jMgKuAG_4wOf-8fzEGudpFmBY75iFGBY/view?usp=sharing" class="btn-sub">SELENGKAPNYA</a>
+                <a href="https://drive.google.com/file/d/1jMgKuAG_4wOf-8fzEGudpFmBY75iFGBY/view?usp=sharing" target="_blank" class="btn-sub">SELENGKAPNYA</a>
             </div>
             <div class="project-card">
                 <img src="{{ url_for('static', filename='assets/proyek/proyek 2.webp') }}" alt="Proyek 2">
                 <h3>DESAIN BAJU & APPAREL</h3>
                 <p>Koleksi Eksklusif Desain Kaos Bertema Anime.</p>
-                <a href="https://drive.google.com/file/d/1JaKUijqHjq3zyFFBgzyjDc1I-6K2-8rY/view?usp=sharing" class="btn-sub">SELENGKAPNYA</a>
+                <a href="https://drive.google.com/file/d/1Lb7T4As03U4U_Ijv0zQzhqy_XxfRsHRY/view?usp=sharing" target="_blank" class="btn-sub">SELENGKAPNYA</a>
             </div>
             <div class="project-card">
                 <img src="{{ url_for('static', filename='assets/proyek/proyek 3.webp') }}" alt="Proyek 3">
                 <h3>BANNER TURNAMEN</h3>
                 <p>Desain Publikasi & Banner Turnamen Bulutangkis.</p>
-                <a href="https://drive.google.com/file/d/1a4bsBG9A8qooojBD0XTuP-eDiNurN1L_/view?usp=sharing" class="btn-sub">SELENGKAPNYA</a>
+                <a href="https://drive.google.com/file/d/1wtMQJXGyof0SijHuJJkBAknEo0EYxSeq/view?usp=sharing" target="_blank" class="btn-sub">SELENGKAPNYA</a>
             </div>
             {% endfor %}
         </div>
     </section>
 
-    <!-- SECTION 4: KONTAK & SOSIAL MEDIA -->
+    <!-- SECTION 4: KONTAK -->
     <section id="kontak" class="section-block section-contact">
         <div class="social-footer-container">
             <h2 class="section-title text-center" style="margin-bottom: 10px;">HUBUNGI SAYA</h2>
             <div class="social-grid-custom">
-                <a href="https://wa.me/6285728546808" target="_blank" class="social-btn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                    WhatsApp
-                </a>
-                <a href="https://instagram.com/drk.rviii_" target="_blank" class="social-btn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    Instagram
-                </a>
-                <a href="https://linkedin.com/in/aditiya-ravi-hendrawan" target="_blank" class="social-btn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    LinkedIn
-                </a>
-                <a href="https://youtube.com/@aditiyaravichannel" target="_blank" class="social-btn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    YouTube Channel
-                </a>
-                <a href="#" target="_blank" class="social-btn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                    Facebook
-                </a>
-                <a href="https://t.me/aditiyaravi" target="_blank" class="social-btn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.26.26-.534.26l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.195 1.006.13 8.32 1.094z"/></svg>
-                    Telegram (@aditiyaravi)
-                </a>
+                <a href="https://wa.me/6285728546808" target="_blank" class="social-btn">WhatsApp</a>
+                <a href="https://instagram.com/drk.rviii_" target="_blank" class="social-btn">Instagram</a>
+                <a href="https://linkedin.com/in/aditiya-ravi-hendrawan" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="https://youtube.com/@aditiyaravichannel" target="_blank" class="social-btn">YouTube</a>
             </div>
-            
             <div class="footer-bottom-bar">
                 <span>© copyright 2026</span>
                 <span class="watermark-text">RONGAWI ANTI SUKI</span>
@@ -150,317 +129,4 @@
     </section>
 
 </body>
-=======
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width,
-        initial-scale=1.0" />
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="{{ url_for('static', filename='icon/favicone.ico') }}" type="image/x-icon">
-
-        <!-- CSS Flask Style -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-
-        <!-- GLightbox CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/css/glightbox.min.css">
-
-        <!-- font poppins -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" 
-        rel="stylesheet">
-
-        <!-- Font Awsome -->
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-         <!-- Scroll Top-->
-         <div class="scroll-up">
-            <a href="#beranda">
-                <i class="fa-solid fa-arrow-up "></i>
-            </a>
-         </div>
-        <!-- Scroll Top-->
-
-         <!-- GLightbox JS -->
-         <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-        <script>
-        // Inisialisasi GLightbox
-        const lightbox = GLightbox({
-            selector: '.glightbox'
-        });
-        </script>
-
-         <!--AOS -->
-           <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-         <!--AOS -->
-        <title> PORTOFOLIO RAVI </title>
-         </head>
-         <body id="beranda">
-
-        
-
-        <header>
-
- 
-        <!-- Navbar -->
-       <div class="navbar">
-            <div class="container">
-                <div class="navbar-box">
-                    <ul class="menu">
-                        <li><a href="{{ url_for('home') }}">Beranda</a></li>
-                        <li><a href="{{ url_for('about') }}">Tentang</a></li>
-                        <li><a href="{{ url_for('home') }}#proyek">Proyek</a></li>
-                        <li><a href="https://wa.me/6285728546808" target="_blank">Kontak</a></li>
-                        <!-- Tombol Dark Mode -->
-                        <li>
-                            <button id="theme-toggle" style="background: none; border: 1px solid #00cba9; padding: 5px 12px; border-radius: 5px; cursor: pointer; color: inherit;">
-                                <i class="fa-solid fa-moon"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar -->
-
-
-        <!-- hero -->
-         <div class="hero">
-            <div class="countainer">
-                <div class="hero-box">
-                    <img src="{{ url_for('static', filename='assets/hero.webp') }}" alt="hero image">
-                    <h1>
-                        Hai, Saya <span id="element"></span> <br>
-                        Desainer Grafis
-                    </h1>
-                </div>
-            </div>
-         </div>
-        <!-- hero -->
-
-        <!-- Waves -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#00cba9"
-          fill-opacity="1"
-          d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,138.7C672,149,768,203,864,229.3C960,256,1056,256,1152,245.3C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-         </svg>
-        <!-- Waves -->
-
-        </header>
-
-        <!-- Tentang -->
-         <div class="tentang" id="tentang">
-            <div class="container">
-                <h1 data-aos="fade-up" data-aos-duration="1000">Tentang</h1>
-                <div class="tentang-box">
-                    <div class="box">
-                        <img src="{{ url_for('static', filename='assets/tentang.png') }}" alt="Tentang Image" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"/>
-                        <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                            <p>Hai, Nama saya <span> Aditiya Ravi Hendrawan </span>
-                                Ketertarikan saya pada dunia desain grafis sudah tumbuh sejak saya duduk 
-                                di bangku SMA, dan seiring berjalannya waktu, passion ini terus berkembang 
-                                menjadi jalan karier yang saya tekuni dengan serius, dan sekarang saya sedang menempuh pendidikan di Universitas Nahdlatul Ulama Yogyakarta, jurusan informatika.
-
-                                Untuk mengasah keterampilan dan memahami industri secara langsung, 
-                                saya pernah bekerja di sebuah perusahaan percetakan selama 15 bulan. 
-                                Pengalaman ini memberikan saya wawasan praktis yang mendalam, 
-                                mulai dari proses eksekusi visual menggunakan software
-                                CorelDRAW dan Adobe Ilustrator hingga memastikan kualitas hasil cetak (print production).
-                            </p>
-                            <a href="{{ url_for('about') }}">About Me</a>
-                        </div>
-                    </div>
-                    <div class="box" style="margin-top: 80px;">
-                        <h1 data-aos="fade-up" data-aos-duration="1000"> Tols Yang Biasa di Pakai </h1>
-                        <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100"> berikut ini beberapa tols yang biasa di pakai </p>
-                        <div class="tools">
-                            <div class="tools-box" data-aos="fade-down" data-aos-duration="300" data-aos-delay="90">
-                                <img src="{{ url_for('static', filename='assets/tools/ai.png') }}" alt="Tools Image"/>
-                                <div class="tools-desc">
-                                    <h3> Adobe Ilustrator </h3>
-                                    <p> Desain Ilustrator </p>
-                                </div>
-                            </div>
-                            <div class="tools-box" data-aos="fade-down" data-aos-duration="280" data-aos-delay="90">
-                                <img src="{{ url_for('static', filename='assets/tools/corel.png') }}" alt="Tolls Image"/>
-                                <div class="tools-desc">
-                                    <h3> CorelDraw </h3>
-                                    <p> Desain Percetakan</p>
-                                </div>
-                            </div>
-                            <div class="tools-box" data-aos="fade-down" data-aos-duration="110" data-aos-delay="90">
-                                <img src="{{ url_for('static', filename='assets/tools/premier pro.png') }}" alt="Tools Image">
-                                <div class="tools-desc">
-                                    <h3> Adobe Premier Pro </h3>
-                                    <p> Editing Video </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-        <!-- Tentang -->
-
-        <!-- Waves -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-        fill="#00cba9"
-        fill-opacity="1"
-        d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,138.7C672,149,768,203,864,229.3C960,256,1056,256,1152,245.3C1248,235,1344,213,1392,202.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-        ></path>
-        </svg>
-        <!-- Waves -->
-
-        <!-- Proyek -->
-         <div class="proyek" id="proyek">
-            <div class="container">
-                <h1 data-aos="fade-up" data-aos-duration="1000"> Daftar Proyek </h1>
-                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"> Berikut ini daftar proyek yang sudah saya pernah saya kerjakan </p>
-                
-                <!--- proyek 1 -->
-                <div class="proyek-box">
-                    <div class="box" data-aos="fade-up" data-aos-duration="600">
-                        <a href="{{ url_for('static', filename='assets/proyek/proyek 1.webp') }}" class="glightbox" data-title="Logo & Branding">
-                         <img src="{{ url_for('static', filename='assets/proyek/proyek 1.webp') }}" alt="proyek image"/>
-                        </a>
-                        <div class="proyek-desc">
-                            <h2>Logo & Branding </h2>
-                        <p>Karya ini menampilkan koleksi perancangan identitas merek dan desain 
-                            kemasan untuk berbagai sektor usaha,</p>
-                            <div class="proyek-btn">
-                                <a href="https://drive.google.com/file/d/1jMgKuAG_4wOf-8fzEGudpFmBY75iFGBY/view?usp=sharing">Lihat Protofolio</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--- proyek 2 -->
-                    <div class="box" data-aos="fade-up" data-aos-duration="120">
-                        <a href="{{ url_for('static', filename='assets/proyek/proyek 2.webp') }}" class="glightbox" data-title="Desain Baju">
-                            <img src="{{ url_for('static', filename='assets/proyek/proyek 2.webp') }}" alt="proyek image"/>
-                        </a>
-                        <div class="proyek-desc">
-                            <h2>Desain Baju </h2>
-                        <p>Karya ini menampilkan koleksi desain baju custom yang di request sesuai permiantaa pelanggan dengan deadline yang sudah di tentukan </p>
-                            <div class="proyek-btn">
-                                <a href="https://drive.google.com/file/d/1Lb7T4As03U4U_Ijv0zQzhqy_XxfRsHRY/view?usp=sharing">Lihat Protofolio</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--- proyek 3 -->
-                    <div class="box" data-aos="fade-up" data-aos-duration="30">
-                        <a href="{{ url_for('static', filename='assets/proyek/proyek 3.webp') }}" class="glightbox" data-title="Banner">
-                            <img src="{{ url_for('static', filename='assets/proyek/proyek 3.webp') }}" alt="proyek image"/>
-                        </a>
-                        <div class="proyek-desc">
-                            <h2> Banner </h2>
-                        <p>Karya ini menampilkan koleksi banner, yang di pesan sesuai permintaan pelanggan dengan deadline yang sudah di tentukan</p>
-                            <div class="proyek-btn">
-                                <a href="https://drive.google.com/file/d/1wtMQJXGyof0SijHuJJkBAknEo0EYxSeq/view?usp=sharing">Lihat Protofolio</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-        <!-- Proyek -->
-         
-        <!-- Konsultasi wa -->
-        <div class="konsultasi-container" id="kontak" >
-            <a href="https://wa.me/6285728546808" target="_blank" class="btn-konsultasi" data-aos-duration="400">
-                 <i class="fa-brands fa-whatsapp" ></i> Konsultasi
-             </a>
-        </div>
-        <!-- Konsultasi wa -->
-
-        <!-- Waves -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#00cba9"
-          fill-opacity="1"
-          d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,138.7C672,149,768,203,864,229.3C960,256,1056,256,1152,245.3C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
-        <!-- Waves -->
-
-
-        <!-- Kontak -->
-         <footer>
-            <p>&copy; Copyright 2025 by <span> Aditiya Ravi Hendrawan.</span></p>
-            <div class="social">
-                <a href="#">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-            </div>
-         </footer>
-        <!-- Kontak -->
-
-
-         <!-- Library Typed.js (Harus dipanggil paling atas sebelum script dijalankan) -->
-        <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
-        
-        <!-- Script Inisialisasi Typed.js & Dark Mode -->
-        <script>
-            var typed = new Typed('#element', {
-                strings: ["Aditiya Ravi Hendrawan"],
-                typeSpeed: 300,
-                loop: true,
-                backSpeed: 100,      /* Ubah BackSpeed jadi huruf b kecil (backSpeed) */
-                showCursor: false,
-                backDelay: 400
-            });
-
-            //-- KODE DARK MODE ---
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const currentTheme = localStorage.getItem('theme');
-
-            if (currentTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-                if (themeToggleBtn) {
-                    themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                }
-            }
-
-            if (themeToggleBtn) {
-                themeToggleBtn.addEventListener('click', function () {
-                    document.body.classList.toggle('dark-mode');
-                    let theme = 'light';
-                    if (document.body.classList.contains('dark-mode')) {
-                        theme = 'dark';
-                        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                    } else {
-                        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-                    }
-                    localStorage.setItem('theme', theme);
-                });
-            }
-        </script>
-
-        <!-- jS Flask Script -->
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
-        <!-- Script AOS -->
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init({
-                duration: 400,
-                once: true,
-                offset: 50,
-                delay: 0
-            });
-        </script>
-
-        <!-- Script Logika Tambahan (jika ada file script.js eksternal, letakkan paling bawah atau hapus jika tidak dipakai) -->
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-</script>
-    </body>
->>>>>>> 66e10fc494c03c7860204a442affce38ed224bc4
 </html>
