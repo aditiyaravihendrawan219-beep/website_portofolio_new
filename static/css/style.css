@@ -405,15 +405,15 @@ body {
     transform: translateY(-3px);
 }
 
-/* =========================================================
-   HAMBURGER MENU RESPONSIF
-   ========================================================= */
+
+   PERBAIKAN HAMBURGER & TEKS MENU MOBILE
+
 .hamburger-btn {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 24px;
-    height: 18px;
+    width: 26px;
+    height: 20px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -433,37 +433,48 @@ body {
 @media (max-width: 768px) {
     .navbar-pill {
         width: 90%;
-        padding: 10px 18px;
+        padding: 12px 20px;
         border-radius: 30px;
+        position: relative;
     }
 
     .hamburger-btn {
-        display: flex; /* Munculkan tombol garis tiga di HP */
+        display: flex; /* Munculkan tombol garis tiga */
     }
 
+    /* Kotak dropdown menu saat disembunyikan */
     .nav-menu {
         position: absolute;
-        top: 60px;
+        top: 65px;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.95);
+        background: #3b110e !important; /* Latar belakang cokelat tua khas tema */
         backdrop-filter: blur(12px);
         flex-direction: column;
         align-items: center;
-        gap: 12px;
-        padding: 18px 0;
-        border-radius: 18px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        gap: 15px;
+        padding: 22px 0;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         display: none; /* Sembunyikan default sebelum diklik */
     }
 
+    /* Saat tombol hamburger diklik (class 'active' aktif via JS) */
     .nav-menu.active {
-        display: flex; /* Munculkan saat class 'active' dipanggil JavaScript */
+        display: flex !important; 
     }
 
+    /* Warna teks menu di dalam dropdown mobile */
     .nav-menu a {
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 700;
-        color: #3b110e;
+        color: #ffffff !important; /* Ubah jadi putih bersih biar kontras & kelihatan */
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .nav-menu a:hover {
+        color: #f4d03f !important; /* Kuning keemasan saat di-hover */
     }
 }
