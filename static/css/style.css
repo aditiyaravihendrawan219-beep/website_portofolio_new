@@ -442,37 +442,34 @@ body {
         display: flex !important;
     }
 
-    /* Kotak dropdown menu mobile */
+    /* Dropdown menu muncul di bawah navbar utama tanpa tumpang tindih */
     .nav-menu {
         position: absolute !important;
-        top: 75px !important; /* Diberi jarak ke bawah biar tidak menempel/menutupi tombol utama */
+        top: 65px !important;
         left: 0 !important;
         right: 0 !important;
         background: #3b110e !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 16px !important;
-        padding: 24px 20px !important;
+        gap: 15px !important;
+        padding: 22px 20px !important;
         border-radius: 20px !important;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
         border: 1px solid rgba(255, 255, 255, 0.2) !important;
         display: none !important;
-        z-index: 999 !important;
+        z-index: 9999 !important;
     }
 
-    /* Saat menu aktif (diklik) */
     .nav-menu.active {
-        display: flex !important; 
+        display: flex !important;
     }
 
-    /* Styling teks menu biar rapi dan tidak tumpang tindih */
     .nav-menu a {
         font-size: 16px !important;
         font-weight: 700 !important;
         color: #ffffff !important;
         text-decoration: none !important;
-        padding: 6px 0 !important;
-        letter-spacing: 0.5px !important;
+        padding: 5px 0 !important;
     }
 
     .nav-menu a:hover {

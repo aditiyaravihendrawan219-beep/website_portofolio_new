@@ -18,22 +18,22 @@
                         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                     </svg>
                 </a>
-                
-                <!-- Menu Navigasi dengan ID untuk Hamburger -->
-                <nav class="nav-menu" id="navMenu">
-                    <a href="#beranda" onclick="toggleMenu()">Beranda</a>
-                    <a href="#tentang" onclick="toggleMenu()">Tentang</a>
-                    <a href="#proyek" onclick="toggleMenu()">Proyek</a>
-                    <a href="#kontak" onclick="toggleMenu()">Kontak</a>
-                </nav>
 
-                <!-- Tombol Hamburger (Garis Tiga) untuk Mobile -->
+                <!-- Tombol Hamburger (Garis Tiga) di dalam pil -->
                 <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
             </div>
+
+            <!-- Menu Navigasi (Dikeluarkan dari nav-content agar posisinya turun ke bawah dengan bebas) -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#beranda" onclick="toggleMenu()">Beranda</a>
+                <a href="#tentang" onclick="toggleMenu()">Tentang</a>
+                <a href="#proyek" onclick="toggleMenu()">Proyek</a>
+                <a href="#kontak" onclick="toggleMenu()">Kontak</a>
+            </nav>
         </div>
 
         <div class="hero-text-container">
