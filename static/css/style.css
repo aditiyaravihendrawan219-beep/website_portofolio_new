@@ -26,7 +26,7 @@ body {
 
 /* SECTION 1: HERO */
 .section-hero {
-    background-image: url('../assets/rudeus-halaman1.webp');
+    background-image: url('../assets/rudeus_halaman1.webp');
     background-size: cover;
     background-position: center;
     justify-content: flex-start;
@@ -234,7 +234,7 @@ body {
 
 /* SECTION 3: PROYEK */
 .section-projects {
-    background-image: url('../assets/rudeus-halaman2.jpg');
+    background-image: url('../assets/rudeus-halaman2.webp');
     background-size: cover;
     background-position: center;
     height: auto;
