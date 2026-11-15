@@ -9,6 +9,12 @@
 </head>
 <body class="login-page">
 
+    <!-- AUDIO LATAR LOGIN (AUTOPLAY TANPA TOMBOL MANUAL) -->
+    <audio id="loginAudio" autoplay loop>
+        <source src="{{ url_for('static', filename='assets/backsound_login.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="login-card">
         <h2 class="login-title">LOGIN ADMIN</h2>
         
@@ -60,6 +66,19 @@
                 eyeIcon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>';
             }
         }
+
+        // Auto-play audio latar belakang saat halaman login dibuka
+        window.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('loginAudio');
+            audio.volume = 0.3; // Volume diatur 30%
+            audio.play().catch(error => {
+                console.log("Autoplay dicegah browser, akan otomatis play saat ada interaksi klik:", error);
+                // Fallback: Langsung play pas ada klik pertama di halaman login
+                document.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true });
+            });
+        });
     </script>
 </body>
 </html>
