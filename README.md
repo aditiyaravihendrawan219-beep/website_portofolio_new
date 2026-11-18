@@ -5,7 +5,7 @@ Portofolio web pribadi interaktif yang dikembangkan menggunakan **Python Flask**
 ---
 
 ## 🛠️ Tech Stack & Tools
-* **Frontend:** HTML5, CSS3 (Dark Anime Theme), JavaScript (Floating Audio & Volume Slider)
+* **Frontend:** HTML5, CSS3 (Anime Moshoku Thensei), JavaScript (Floating Audio & Volume Slider)
 * **Backend:** Python, Flask Framework, Werkzeug Security
 * **Database & Storage:** Supabase (PostgreSQL Cloud Tables)
 * **Deployment:** Vercel Serverless Platform
