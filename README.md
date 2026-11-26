@@ -2,7 +2,12 @@
 
 Portofolio web pribadi interaktif yang dikembangkan menggunakan **Python Flask** sebagai backend, **Supabase (PostgreSQL)** sebagai database cloud, dan dideploy secara live di **Vercel**. Proyek ini dilengkapi dengan panel admin terautentikasi dan fitur multimedia (pemutar musik latar).
 
----
+## ⚠️ Disclaimer & Catatan Tugas
+Proyek dan repositori ini dibuat **semata-mata untuk keperluan tugas akademik/pembelajaran** dan **akan dihapus setelah masa penilaian selesai**. Beberapa aset visual/ilustrasi bertema karakter *Mushoku Tensei* digunakan sebagai referensi tampilan non-komersial dan hak ciptanya tetap milik pemegang hak cipta resmi masing-masing.
+
+link sumber lagu:
+halaman login : https://youtu.be/jwriFosLRww
+halaman dahbord : https://youtu.be/fE9trKOuT3Q
 
 ## 🛠️ Tech Stack & Tools
 * **Frontend:** HTML5, CSS3 (Anime Moshoku Thensei), JavaScript (Floating Audio & Volume Slider)
@@ -52,4 +57,4 @@ supabase: Client = create_client(url, key)
 - Admin Dashboard: Manajemen tambah, edit, dan hapus proyek serta pembaruan profil singkat secara dinamis.
 - Background Audio Player: Widget pemutar musik melayang interaktif lengkap dengan slider kontrol volume di halaman utama, serta autoplay di halaman login admin.
 
-© 2026 Aditiya Ravi Hendrawan. All Rights Reserved.
+© 2026 Aditiya Ravi Hendrawan — Dibuat untuk keperluan tugas akademik.
