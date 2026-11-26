@@ -6,7 +6,7 @@ Portofolio web pribadi interaktif yang dikembangkan menggunakan **Python Flask**
 Proyek dan repositori ini dibuat **semata-mata untuk keperluan tugas akademik/pembelajaran** dan **akan dihapus setelah masa penilaian selesai**. Beberapa aset visual/ilustrasi bertema karakter *Mushoku Tensei* digunakan sebagai referensi tampilan non-komersial dan hak ciptanya tetap milik pemegang hak cipta resmi masing-masing.
 
 ## Kredit Aset & Sumber Referensi
-* **Audio / Musik Latar:** [Lisa Homura] — Sumber: (https://youtu.be/jwriFosLRww)
+* **Audio / Musik Latar:** [Lisa Homura] — Sumber: ((https://youtu.be/4DxL6IKmXx4))
 * **Audio / Musik Latar:** [spiral] — Sumber: ( https://youtu.be/fE9trKOuT3Q)
 * **Elemen Visual:** Ilustrasi karakter *Mushoku Tensei* (Rudeus, Sylphiette, Roxy, dan Eris) pada latar *hero* digunakan sebagai referensi tema tampilan non-komersial. Hak cipta karakter dan karya aslinya tetap milik pemegang hak cipta resminya.
 
